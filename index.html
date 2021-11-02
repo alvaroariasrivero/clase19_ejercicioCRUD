@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Creación DB MongoDB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Creación base de datos en mongodb</h1>
+      <form action="/nuevadb" method="POST">
+        <div class="form-group">
+          <label for="dbName">Nombre DB</label>
+          <input type="text" class="form-control" id="dbName" aria-describedby="emailHelp" placeholder="Enter DB Name" name="db_name">
+        </div>
+        <div class="form-group">
+          <label for="collName">Nombre de la Colección</label>
+          <input type="text" class="form-control" id="collName" aria-describedby="emailHelp" placeholder="Enter collection name" name="coll_name">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="container">
+        <h1>Creación Nueva Colección</h1>
+        <form action="/nuevacoll" method="POST">
+            <div class="form-group">
+            <label for="newCollName">Nombre Nueva Colección</label>
+            <input type="text" class="form-control" id="newCollName" aria-describedby="emailHelp" placeholder="Enter collection name" name="new_coll_name">
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>Incorporar datos en la base de datos en mongodb</h1>
+        <form action="/nuevonombre" method="POST">
+            <div class="form-group">
+                <label for="nameDocData">Nombre</label>
+                <input type="text" class="form-control" id="nameDocData" aria-describedby="emailHelp" name="name_doc_data" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="dirDocData">Dirección</label>
+                <input type="text" class="form-control" id="dirDocData" aria-describedby="emailHelp" name="dir_doc_data" placeholder="Enter Direction">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>Búsqueda por nombre</h1>
+        <form action="/busca" method="POST">
+            <div class="form-group">
+            <label for="searchName">Nombre Nueva Colección</label>
+            <input type="text" class="form-control" id="searchName" aria-describedby="emailHelp" placeholder="Enter name" name="search_name">
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>Eliminar campo por nombre</h1>
+        <form action="/elimina" method="POST">
+            <div class="form-group">
+            <label for="delName">Nombre Nueva Colección</label>
+            <input type="text" class="form-control" id="delName" aria-describedby="emailHelp" placeholder="Enter name" name="del_name">
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>Actualizar Datos en DB</h1>
+        <form action="/actualiza" method="POST">
+            <div class="form-group">
+                <label for="oldnameDocData">Nombre a actualizar</label>
+                <input type="text" class="form-control" id="oldnameDocData" aria-describedby="emailHelp" name="old_name_doc_data" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="newnameDocData">Nombre nuevo</label>
+                <input type="text" class="form-control" id="newnameDocData" aria-describedby="emailHelp" name="new_name_doc_data" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+                <label for="newdirDocData">Dirección nueva</label>
+                <input type="text" class="form-control" id="newdirDocData" aria-describedby="emailHelp" name="new_dir_doc_data" placeholder="Enter Direction">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </body>
+</html>
