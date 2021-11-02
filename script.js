@@ -11,7 +11,8 @@ const url = "mongodb://localhost:27017/";
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
-    
+
+////////////////////////////////////////Creación bd+colección////////////////////////////////////////////////
 app.post('/nuevadb', urlencodedParser, (req, res) => {
     console.log('Nombre DB:', req.body.db_name, '\Nombre Coleccion: ', req.body.coll_name);
     res.send(req.body); //La página que se me abre con el objeto
@@ -37,6 +38,7 @@ app.post('/nuevadb', urlencodedParser, (req, res) => {
     });
 });
 
+//////////////////////////////////////////////Creación colecciones//////////////////////////////////////
 app.post('/nuevacoll', urlencodedParser, (req, res) => {
     console.log('Nueva colección: ', req.body.new_coll_name);
     res.send(req.body); //La página que se me abre con el objeto
@@ -53,6 +55,7 @@ app.post('/nuevacoll', urlencodedParser, (req, res) => {
     });
 });
 
+////////////////////////////////////////Insertar documentos//////////////////////////////////////////////////
 app.post('/nuevonombre', urlencodedParser, (req, res) => {
     console.log('Nombre:', req.body.name_doc_data, 'Dirección:', req.body.dir_doc_data);
     res.send(req.body); //La página que se me abre con el objeto
@@ -74,8 +77,9 @@ app.post('/nuevonombre', urlencodedParser, (req, res) => {
       });
 });
 
+////////////////////////////////////////Mostrar un documento////////////////////////////////////////////////
 app.post('/busca', urlencodedParser, (req, res) => {
-    res.send(req.body)
+    res.send(req.body) //La página que se me abre con el objeto
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("PruebaDB");
@@ -88,8 +92,9 @@ app.post('/busca', urlencodedParser, (req, res) => {
       });
 })
 
+////////////////////////////////Eliminar documento///////////////////////////////////////////////////////
 app.post('/elimina', urlencodedParser, (req, res) => {
-    res.send(req.body)
+    res.send(req.body) //La página que se me abre con el objeto
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("PruebaDB");
@@ -102,8 +107,9 @@ app.post('/elimina', urlencodedParser, (req, res) => {
     });
 })
 
+/////////////////////////////////Actualizar documento//////////////////////////////////////////////////////////
 app.post('/actualiza', urlencodedParser, (req, res) => {
-    res.send(req.body)
+    res.send(req.body) //La página que se me abre con el objeto
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         var dbo = db.db("PruebaDB");
